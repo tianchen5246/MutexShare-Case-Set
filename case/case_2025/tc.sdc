@@ -1,0 +1,12 @@
+create_clock -name vclk -period 1.0
+set_input_delay 0.2 -clock vclk [get_ports in*]
+set_output_delay 0.2 -clock vclk [all_outputs]
+set_input_delay 0.065 -clock vclk [get_ports sel_1[0]]
+set_input_delay 0.059 -clock vclk [get_ports sel_1[1]]
+set_input_delay 0.079 -clock vclk [get_ports sel_1[2]]
+set_input_delay 0.02 -clock vclk [get_ports sel_2[0]]
+set_input_delay 0.036 -clock vclk [get_ports sel_2[1]]
+set_input_delay 0.055 -clock vclk [get_ports sel_3[0]]
+set_input_delay 0.08 -clock vclk [get_ports sel_3[1]]
+set_input_delay 0.056 -clock vclk [get_ports sel_4[0]]
+set_input_delay 0.076 -clock vclk [get_ports sel_4[1]]

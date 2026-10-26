@@ -1,0 +1,84 @@
+// seed=7 case=2660
+// k1=5 k2=10 k3=5 k4=8 k5=8
+// operation: mul
+// base chains: {'count': 8, 'widths': [8], 'kind': 'mul'}
+// derived nodes: {'count': 0, 'kinds': ['*']}
+// select mix: pure-two
+// select topology: tree
+// dp width cap: 8 uniform
+// group0: width=8 k1=5 k2=10 k3=5 k4=8 topology=tree mix=pure-two
+// select0: two width=8 selw=1 leaves=2
+// select1: two width=8 selw=1 leaves=2
+// select2: two width=8 selw=1 leaves=2
+// select3: two width=8 selw=1 leaves=2
+// select4: two width=8 selw=1 leaves=2
+// dp1: type=2 width=8 const=N minus=N signed=Y inputs=[2,2,2,2] points=[w5]
+// dp2: type=2 width=8 const=N minus=N signed=Y inputs=[2,2,2,2] points=[out_2]
+// dp3: type=2 width=8 const=N minus=N signed=Y inputs=[2,2,2,2] points=[w6]
+// dp4: type=2 width=8 const=N minus=N signed=Y inputs=[2,2,2,2] points=[w7]
+// dp5: type=2 width=8 const=N minus=N signed=Y inputs=[2,2,2,2] points=[w8]
+// dp6: type=2 width=8 const=N minus=N signed=Y inputs=[2,2,2,2] points=[out_3]
+// dp7: type=2 width=8 const=N minus=N signed=Y inputs=[2,2,2,2] points=[out_4]
+// dp8: type=2 width=8 const=N minus=N signed=Y inputs=[2,2,2,2] points=[w9]
+module tc (
+    input sel_1,
+    input sel_2,
+    input sel_3,
+    input sel_4,
+    input sel_5,
+    output [7:0] out_1,
+    input [1:0] in_1,
+    input [1:0] in_2,
+    input [1:0] in_3,
+    input [1:0] in_4,
+    input [1:0] in_5,
+    input [1:0] in_6,
+    input [1:0] in_7,
+    input [1:0] in_8,
+    input [1:0] in_9,
+    input [1:0] in_10,
+    input [1:0] in_11,
+    input [1:0] in_12,
+    input [1:0] in_13,
+    input [1:0] in_14,
+    input [1:0] in_15,
+    input [1:0] in_16,
+    input [1:0] in_17,
+    input [1:0] in_18,
+    input [1:0] in_19,
+    input [1:0] in_20,
+    input [1:0] in_21,
+    input [1:0] in_22,
+    input [7:0] in_23,
+    output [7:0] out_2,
+    output [7:0] out_3,
+    output [7:0] out_4
+);
+    wire [7:0] w1;
+    wire [7:0] w2;
+    wire [7:0] w3;
+    wire [7:0] w4;
+    wire [7:0] w5;
+    wire [7:0] w6;
+    wire [7:0] w7;
+    wire [7:0] w8;
+    wire [7:0] w9;
+
+    // dp expressions
+    assign w5 = $signed(in_1)*$signed(in_2)*$signed(in_3)*$signed(in_4);
+    assign out_2 = $signed(in_5)*$signed(in_1)*$signed(in_6)*$signed(in_2);
+    assign w6 = $signed(in_3)*$signed(in_6)*$signed(in_1)*$signed(in_7);
+    assign w7 = $signed(in_7)*$signed(in_8)*$signed(in_9)*$signed(in_10);
+    assign w8 = $signed(in_11)*$signed(in_4)*$signed(in_12)*$signed(in_13);
+    assign out_3 = $signed(in_14)*$signed(in_15)*$signed(in_6)*$signed(in_16);
+    assign out_4 = $signed(in_17)*$signed(in_18)*$signed(in_19)*$signed(in_20);
+    assign w9 = $signed(in_21)*$signed(in_12)*$signed(in_22)*$signed(in_8);
+
+    // selects
+    assign w1 = sel_1 ? in_23 : w7;
+    assign w2 = sel_2 ? w6 : w9;
+    assign w3 = sel_3 ? w8 : w5;
+    assign w4 = sel_4 ? w1 : w3;
+    assign out_1 = sel_5 ? w4 : w2;
+
+endmodule

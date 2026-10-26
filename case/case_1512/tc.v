@@ -1,0 +1,122 @@
+// seed=7 case=1512
+// k1=12 k2=24 k3=11 k4=9 k5=9
+// operation: mul
+// base chains: {'count': 9, 'widths': [8], 'kind': 'mul'}
+// derived nodes: {'count': 0, 'kinds': ['*']}
+// select mix: pure-two
+// select topology: chain
+// dp width cap: 8 uniform
+// group0: width=8 k1=12 k2=24 k3=11 k4=9 topology=chain mix=pure-two
+// select0: two width=8 selw=1 leaves=2
+// select1: two width=8 selw=1 leaves=2
+// select2: two width=8 selw=1 leaves=2
+// select3: two width=8 selw=1 leaves=2
+// select4: two width=8 selw=1 leaves=2
+// select5: two width=8 selw=1 leaves=2
+// select6: two width=8 selw=1 leaves=2
+// select7: two width=8 selw=1 leaves=2
+// select8: two width=8 selw=1 leaves=2
+// select9: two width=8 selw=1 leaves=2
+// select10: two width=8 selw=1 leaves=2
+// select11: two width=8 selw=1 leaves=2
+// dp1: type=2 width=8 const=N minus=N signed=N inputs=[2,2,2,2] points=[w3]
+// dp2: type=2 width=8 const=N minus=N signed=N inputs=[2,2,2,2] points=[w4]
+// dp3: type=2 width=8 const=N minus=N signed=N inputs=[2,2,2,2] points=[w5]
+// dp4: type=2 width=8 const=N minus=N signed=N inputs=[2,2,2,2] points=[w6]
+// dp5: type=2 width=8 const=N minus=N signed=N inputs=[2,2,2,2] points=[w7]
+// dp6: type=2 width=8 const=N minus=N signed=N inputs=[2,2,2,2] points=[w8]
+// dp7: type=2 width=8 const=N minus=N signed=N inputs=[2,2,2,2] points=[w9]
+// dp8: type=2 width=8 const=N minus=N signed=N inputs=[2,2,2,2] points=[w10]
+// dp9: type=2 width=8 const=N minus=N signed=N inputs=[2,2,2,2] points=[w11]
+// broken links: sel1->sel2,sel3->sel4,sel4->sel5,sel5->sel6,sel6->sel7,sel7->sel8,sel8->sel9,sel9->sel10,sel10->sel11
+module tc (
+    input sel_1,
+    input sel_2,
+    output [7:0] out_1,
+    input sel_3,
+    input sel_4,
+    output [7:0] out_2,
+    input sel_5,
+    output [7:0] out_3,
+    input sel_6,
+    output [7:0] out_4,
+    input sel_7,
+    output [7:0] out_5,
+    input sel_8,
+    output [7:0] out_6,
+    input sel_9,
+    output [7:0] out_7,
+    input sel_10,
+    output [7:0] out_8,
+    input sel_11,
+    output [7:0] out_9,
+    input sel_12,
+    output [7:0] out_10,
+    input [1:0] in_1,
+    input [1:0] in_2,
+    input [1:0] in_3,
+    input [1:0] in_4,
+    input [1:0] in_5,
+    input [1:0] in_6,
+    input [1:0] in_7,
+    input [1:0] in_8,
+    input [1:0] in_9,
+    input [1:0] in_10,
+    input [1:0] in_11,
+    input [1:0] in_12,
+    input [1:0] in_13,
+    input [1:0] in_14,
+    input [1:0] in_15,
+    input [1:0] in_16,
+    input [1:0] in_17,
+    input [1:0] in_18,
+    input [1:0] in_19,
+    input [1:0] in_20,
+    input [1:0] in_21,
+    input [1:0] in_22,
+    input [1:0] in_23,
+    input [1:0] in_24,
+    input [1:0] in_25,
+    input [1:0] in_26,
+    input [1:0] in_27,
+    input [7:0] in_28,
+    input [7:0] in_29
+);
+    wire [7:0] w1;
+    wire [7:0] w10;
+    wire [7:0] w11;
+    wire [7:0] w2;
+    wire [7:0] w3;
+    wire [7:0] w4;
+    wire [7:0] w5;
+    wire [7:0] w6;
+    wire [7:0] w7;
+    wire [7:0] w8;
+    wire [7:0] w9;
+
+    // dp expressions
+    assign w3 = in_1*in_2*in_3*in_4;
+    assign w4 = in_5*in_6*in_1*in_7;
+    assign w5 = in_8*in_9*in_4*in_10;
+    assign w6 = in_9*in_11*in_12*in_13;
+    assign w7 = in_14*in_15*in_1*in_16;
+    assign w8 = in_17*in_18*in_8*in_19;
+    assign w9 = in_20*in_14*in_10*in_21;
+    assign w10 = in_1*in_22*in_23*in_24;
+    assign w11 = in_25*in_8*in_26*in_27;
+
+    // selects
+    assign w1 = sel_1 ? w5 : w9;
+    assign out_1 = sel_2 ? w1 : w3;
+    assign w2 = sel_3 ? w4 : w7;
+    assign out_2 = sel_4 ? w2 : w6;
+    assign out_3 = sel_5 ? w10 : in_28;
+    assign out_4 = sel_6 ? w11 : w11;
+    assign out_5 = sel_7 ? w9 : in_29;
+    assign out_6 = sel_8 ? w3 : w10;
+    assign out_7 = sel_9 ? w5 : w5;
+    assign out_8 = sel_10 ? w6 : w8;
+    assign out_9 = sel_11 ? w9 : w4;
+    assign out_10 = sel_12 ? w6 : w11;
+
+endmodule

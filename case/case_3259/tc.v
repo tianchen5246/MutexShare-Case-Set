@@ -1,0 +1,241 @@
+// seed=7 case=3259
+// k1=38 k2=76 k3=35 k4=14 k5=6
+// operation: addmul
+// add-sub paired pattern: N
+// base chains: {'count': 6, 'widths': [32], 'kind': 'addsub pairs'}
+// derived nodes: {'count': 8, 'kinds': ['*'], 'paired_pattern': False}
+// select mix: pure-two
+// select topology: chain
+// dp width cap: 32 uniform
+// group0: width=64 k1=20 k2=40 k3=17 k4=8 topology=chain mix=pure-two
+// group1: width=32 k1=3 k2=6 k3=3 k4=1 topology=chain mix=pure-two
+// group2: width=32 k1=3 k2=6 k3=3 k4=1 topology=chain mix=pure-two
+// group3: width=32 k1=3 k2=6 k3=3 k4=1 topology=chain mix=pure-two
+// group4: width=32 k1=3 k2=6 k3=3 k4=1 topology=chain mix=pure-two
+// group5: width=32 k1=3 k2=6 k3=3 k4=1 topology=chain mix=pure-two
+// group6: width=32 k1=3 k2=6 k3=3 k4=1 topology=chain mix=pure-two
+// select0: two width=64 selw=1 leaves=2
+// select1: two width=64 selw=1 leaves=2
+// select2: two width=64 selw=1 leaves=2
+// select3: two width=64 selw=1 leaves=2
+// select4: two width=64 selw=1 leaves=2
+// select5: two width=64 selw=1 leaves=2
+// select6: two width=64 selw=1 leaves=2
+// select7: two width=64 selw=1 leaves=2
+// select8: two width=64 selw=1 leaves=2
+// select9: two width=64 selw=1 leaves=2
+// select10: two width=64 selw=1 leaves=2
+// select11: two width=64 selw=1 leaves=2
+// select12: two width=64 selw=1 leaves=2
+// select13: two width=64 selw=1 leaves=2
+// select14: two width=64 selw=1 leaves=2
+// select15: two width=64 selw=1 leaves=2
+// select16: two width=64 selw=1 leaves=2
+// select17: two width=64 selw=1 leaves=2
+// select18: two width=64 selw=1 leaves=2
+// select19: two width=64 selw=1 leaves=2
+// select20: two width=32 selw=1 leaves=2
+// select21: two width=32 selw=1 leaves=2
+// select22: two width=32 selw=1 leaves=2
+// select23: two width=32 selw=1 leaves=2
+// select24: two width=32 selw=1 leaves=2
+// select25: two width=32 selw=1 leaves=2
+// select26: two width=32 selw=1 leaves=2
+// select27: two width=32 selw=1 leaves=2
+// select28: two width=32 selw=1 leaves=2
+// select29: two width=32 selw=1 leaves=2
+// select30: two width=32 selw=1 leaves=2
+// select31: two width=32 selw=1 leaves=2
+// select32: two width=32 selw=1 leaves=2
+// select33: two width=32 selw=1 leaves=2
+// select34: two width=32 selw=1 leaves=2
+// select35: two width=32 selw=1 leaves=2
+// select36: two width=32 selw=1 leaves=2
+// select37: two width=32 selw=1 leaves=2
+// dp1: type=1 width=32 const=N minus=Y signed=N points=[w32]
+// dp2: type=1 width=32 const=N minus=N signed=Y points=[w33]
+// dp3: type=1 width=32 const=N minus=Y signed=Y points=[w34]
+// dp4: type=1 width=32 const=N minus=Y signed=N points=[w35]
+// dp5: type=1 width=32 const=N minus=N signed=Y points=[w36]
+// dp6: type=1 width=32 const=N minus=N signed=Y points=[w37]
+// dp7: type=2 width=64 const=N minus=N signed=Y inputs=[32,32] points=[w38]
+// dp8: type=2 width=64 const=N minus=N signed=N inputs=[32,32] points=[w39]
+// dp9: type=2 width=64 const=N minus=N signed=Y inputs=[32,32] points=[w40]
+// dp10: type=2 width=64 const=N minus=N signed=N inputs=[32,32] points=[w41]
+// dp11: type=2 width=64 const=N minus=N signed=Y inputs=[32,32] points=[w42]
+// dp12: type=2 width=64 const=N minus=N signed=N inputs=[32,32] points=[w43]
+// dp13: type=2 width=64 const=N minus=N signed=Y inputs=[32,32] points=[w44]
+// dp14: type=2 width=64 const=N minus=N signed=N inputs=[32,32] points=[w45]
+module tc (
+    input sel_1,
+    input sel_2,
+    input sel_3,
+    input sel_4,
+    input sel_5,
+    input sel_6,
+    input sel_7,
+    input sel_8,
+    input sel_9,
+    input sel_10,
+    input sel_11,
+    input sel_12,
+    input sel_13,
+    input sel_14,
+    input sel_15,
+    input sel_16,
+    input sel_17,
+    input sel_18,
+    input sel_19,
+    input sel_20,
+    output [63:0] out_1,
+    input sel_21,
+    input sel_22,
+    input sel_23,
+    output [31:0] out_2,
+    input sel_24,
+    input sel_25,
+    input sel_26,
+    output [31:0] out_3,
+    input sel_27,
+    input sel_28,
+    input sel_29,
+    output [31:0] out_4,
+    input sel_30,
+    input sel_31,
+    input sel_32,
+    output [31:0] out_5,
+    input sel_33,
+    input sel_34,
+    input sel_35,
+    output [31:0] out_6,
+    input sel_36,
+    input sel_37,
+    input sel_38,
+    output [31:0] out_7,
+    input [31:0] in_1,
+    input [31:0] in_2,
+    input [31:0] in_3,
+    input [31:0] in_4,
+    input [31:0] in_5,
+    input [31:0] in_6,
+    input [31:0] in_7,
+    input [31:0] in_8,
+    input [31:0] in_9,
+    input [31:0] in_10,
+    input [31:0] in_11,
+    input [31:0] in_12,
+    input [31:0] in_13,
+    input [63:0] in_14,
+    input [63:0] in_15,
+    input [63:0] in_16,
+    input [63:0] in_17,
+    input [31:0] in_18,
+    input [31:0] in_19,
+    input [31:0] in_20,
+    input [31:0] in_21,
+    input [31:0] in_22,
+    input [31:0] in_23
+);
+    wire [63:0] w1;
+    wire [63:0] w10;
+    wire [63:0] w11;
+    wire [63:0] w12;
+    wire [63:0] w13;
+    wire [63:0] w14;
+    wire [63:0] w15;
+    wire [63:0] w16;
+    wire [63:0] w17;
+    wire [63:0] w18;
+    wire [63:0] w19;
+    wire [63:0] w2;
+    wire [31:0] w20;
+    wire [31:0] w21;
+    wire [31:0] w22;
+    wire [31:0] w23;
+    wire [31:0] w24;
+    wire [31:0] w25;
+    wire [31:0] w26;
+    wire [31:0] w27;
+    wire [31:0] w28;
+    wire [31:0] w29;
+    wire [63:0] w3;
+    wire [31:0] w30;
+    wire [31:0] w31;
+    wire [31:0] w32;
+    wire [31:0] w33;
+    wire [31:0] w34;
+    wire [31:0] w35;
+    wire [31:0] w36;
+    wire [31:0] w37;
+    wire [63:0] w38;
+    wire [63:0] w39;
+    wire [63:0] w4;
+    wire [63:0] w40;
+    wire [63:0] w41;
+    wire [63:0] w42;
+    wire [63:0] w43;
+    wire [63:0] w44;
+    wire [63:0] w45;
+    wire [63:0] w5;
+    wire [63:0] w6;
+    wire [63:0] w7;
+    wire [63:0] w8;
+    wire [63:0] w9;
+
+    // dp expressions
+    assign w32 = (in_1 - in_2) - in_3;
+    assign w33 = $signed(in_4) + $signed(in_5);
+    assign w34 = $signed(in_6) - $signed(in_7);
+    assign w35 = in_8 - in_9;
+    assign w36 = $signed(in_10) + $signed(in_11);
+    assign w37 = $signed(in_12) + $signed(in_13);
+    assign w38 = $signed(w36)*$signed(w37);
+    assign w39 = w32*w35;
+    assign w40 = $signed(w33)*$signed(w34);
+    assign w41 = w32*$signed(w33);
+    assign w42 = $signed(w34)*$signed(w37);
+    assign w43 = w35*$signed(w37);
+    assign w44 = $signed(w34)*$signed(w36);
+    assign w45 = w32*$signed(w37);
+
+    // selects
+    assign w1 = sel_1 ? w38 : in_14;
+    assign w2 = sel_2 ? w1 : w44;
+    assign w3 = sel_3 ? w2 : w42;
+    assign w4 = sel_4 ? w3 : w45;
+    assign w5 = sel_5 ? w4 : w43;
+    assign w6 = sel_6 ? w5 : w41;
+    assign w7 = sel_7 ? w6 : w43;
+    assign w8 = sel_8 ? w7 : in_15;
+    assign w9 = sel_9 ? w8 : w40;
+    assign w10 = sel_10 ? w9 : w44;
+    assign w11 = sel_11 ? w10 : w45;
+    assign w12 = sel_12 ? w11 : w42;
+    assign w13 = sel_13 ? w12 : w39;
+    assign w14 = sel_14 ? w13 : in_16;
+    assign w15 = sel_15 ? w14 : w41;
+    assign w16 = sel_16 ? w15 : w39;
+    assign w17 = sel_17 ? w16 : w40;
+    assign w18 = sel_18 ? w17 : w40;
+    assign w19 = sel_19 ? w18 : w38;
+    assign out_1 = sel_20 ? w19 : in_17;
+    assign w20 = sel_21 ? w32 : w32;
+    assign w21 = sel_22 ? w20 : w32;
+    assign out_2 = sel_23 ? w21 : in_18;
+    assign w22 = sel_24 ? in_19 : w33;
+    assign w23 = sel_25 ? w22 : w33;
+    assign out_3 = sel_26 ? w23 : w33;
+    assign w24 = sel_27 ? w34 : in_20;
+    assign w25 = sel_28 ? w24 : w34;
+    assign out_4 = sel_29 ? w25 : w34;
+    assign w26 = sel_30 ? w35 : w35;
+    assign w27 = sel_31 ? w26 : in_21;
+    assign out_5 = sel_32 ? w27 : w35;
+    assign w28 = sel_33 ? w36 : w36;
+    assign w29 = sel_34 ? w28 : in_22;
+    assign out_6 = sel_35 ? w29 : w36;
+    assign w30 = sel_36 ? w37 : w37;
+    assign w31 = sel_37 ? w30 : w37;
+    assign out_7 = sel_38 ? w31 : in_23;
+
+endmodule
